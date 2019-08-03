@@ -46,6 +46,23 @@
             <version>1.4.199</version>
             <scope>test</scope>
         </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <scope>provided</scope>
+        </dependency>
     </dependencies>
     
     <build>
@@ -56,14 +73,19 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Export-Package>
-                            org.flywaydb.core.*,
-                            com.example.db.migrations
-                        </Export-Package>
                         <Import-Package>
-                            *;resolution:=optional
+                            org.osgi.framework,
+                            org.osgi.service.*,                            
+                            javax.sql,
+                            org.flywaydb.core,
+                            org.flywaydb.core.api.*,
+                            com.example.db.migrations.*,
+                            org.slf4j.*                          
                         </Import-Package>
-                        <_removeheaders>Import-Service</_removeheaders>
+                        <Export-Package>
+                            db.migration,
+                            com.example.db.migrations.*
+                        </Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
