@@ -13,6 +13,7 @@ public class FlywayDBMigrations implements FlywayDBMigrationService {
     
     @Override
     public void migrate() {
+        
          Flyway flyway = Flyway.configure()
                     .dataSource(this.dataSource)
                     .validateOnMigrate(true)

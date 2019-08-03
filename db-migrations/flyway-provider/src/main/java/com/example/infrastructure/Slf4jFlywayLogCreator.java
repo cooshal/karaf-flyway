@@ -1,3 +1,5 @@
+import com.example.db.infrastructure;
+
 import org.flywaydb.core.api.logging.Log;
 import org.flywaydb.core.api.logging.LogCreator;
 import org.slf4j.LoggerFactory;
