@@ -79,12 +79,14 @@
                             javax.sql,
                             org.flywaydb.core,
                             org.flywaydb.core.api.*,
-                            com.example.db.migrations.*,
+                            com.example.db.migrations,
+                            com.example.infrastructure,
                             org.slf4j.*                          
                         </Import-Package>
                         <Export-Package>
                             db.migration,
-                            com.example.db.migrations.*
+                            com.example.db.migrations,
+                            com.example.infrastructure
                         </Export-Package>
                     </instructions>
                 </configuration>

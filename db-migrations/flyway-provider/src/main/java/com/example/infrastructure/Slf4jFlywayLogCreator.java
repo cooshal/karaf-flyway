@@ -1,4 +1,4 @@
-import com.example.db.infrastructure;
+package com.example.infrastructure;
 
 import org.flywaydb.core.api.logging.Log;
 import org.flywaydb.core.api.logging.LogCreator;
@@ -8,6 +8,6 @@ public class Slf4jFlywayLogCreator implements LogCreator{
 
     @Override
     public Log createLogger(Class<?> clazz) {
-        return new Slf4jFlywayLog(LoggerFactory.getLogger(clazz));
+        return new Slf4jFlywayLogger(LoggerFactory.getLogger(clazz));
     }
 }

@@ -1,7 +1,9 @@
 package com.example.db.migrations;
 
 import javax.sql.DataSource;
+import com.example.infrastructure.Slf4jFlywayLogCreator;
 import org.flywaydb.core.Flyway;
+import org.flywaydb.core.api.logging.LogFactory;
 
 public class FlywayDBMigrations implements FlywayDBMigrationService {
 
@@ -14,7 +16,10 @@ public class FlywayDBMigrations implements FlywayDBMigrationService {
     @Override
     public void migrate() {
         
-         Flyway flyway = Flyway.configure()
+        LogFactory.setLogCreator(new Slf4jFlywayLogCreator());
+        ClassLoader classLoader = this.getClass().getClassLoader();
+
+         Flyway flyway = Flyway.configure(classLoader)
                     .dataSource(this.dataSource)
                     .validateOnMigrate(true)
                     .baselineVersion("0.0.1")

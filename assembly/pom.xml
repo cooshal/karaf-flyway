@@ -167,6 +167,7 @@
                         <feature>pax-jdbc-h2</feature>
                         <feature>pax-jdbc-pool-dbcp2</feature>
                         <feature>pax-jdbc-config</feature>
+                        <bundle>mvn:com.h2database/h2/1.4.199</bundle>
                     </bootFeatures>
                     <javase>1.8</javase>
                 </configuration>

@@ -1,13 +1,13 @@
-import com.example.db.infrastructure;
+package com.example.infrastructure;
 
 import org.flywaydb.core.api.logging.Log;
 import org.slf4j.Logger;
 
-public class Slf4jFlywayLog implements Log{
+public class Slf4jFlywayLogger implements Log{
     
     private final Logger logger;
 
-    public Slf4jFlywayLog(Logger logger) {
+    public Slf4jFlywayLogger(Logger logger) {
         this.logger = logger;
     }
     
